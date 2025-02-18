@@ -28,7 +28,7 @@ pipeline{
         stage("change_directory"){
             steps{
                 bat '''
-                cd E:\devops_&_cloud\sem6\ci_cd_lab\java_calci\java_prog\calci.java
+                cd E:\\devops_&_cloud\\sem6\\ci_cd_lab\\java_calci\\java_prog\\calci.java
                 '''
             }
         }
