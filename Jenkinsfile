@@ -44,7 +44,7 @@ pipeline{
         stage('run java program'){
             steps{
                 bat '''
-                cd "java_prog"
+                cd "java_program"
                 java calci
                 '''
             }
