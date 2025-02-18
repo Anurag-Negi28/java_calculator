@@ -57,7 +57,7 @@ pipeline{
                 bat '''
                 cd "java_program"
                 javac calci.java
-                javac calci2.java
+                java calci2 ${TASK} ${FIRST_NUMBER} ${SECOND_NUMBER}
                 '''
             }
         }
