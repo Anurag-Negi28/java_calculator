@@ -45,7 +45,7 @@ pipeline{
         stage("make and change_directory"){
             steps{
                 bat '''
-                mkdir "java_program"
+                if not exists mkdir "java_program"
                 copy "calci.java" "java_program\\"
                 copy "calci2.java" "java_program\\"
                 cd "java_program"
