@@ -28,19 +28,25 @@ pipeline{
         stage("make and change_directory"){
             steps{
                 bat '''
-                mkdir 'java_program'
-                cd 'java_program/java_calci'
+                mkdir "java_program"
+                cd "java_program"
                 '''
             }
         }
         stage('compile java program'){
             steps{
-                bat 'javac calci.java'
+                bat '''
+                cd "java_program"
+                javac calci.java
+                '''
             }
         }
         stage('run java program'){
             steps{
-                bat 'java calci'
+                bat '''
+                cd /D "java_prog"
+                java calci
+                '''
             }
         }
     }
