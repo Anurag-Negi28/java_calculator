@@ -4,7 +4,7 @@ pipeline{
         maven 'M398'
     }
     stages{
-        stage {
+        stage('Hello_world') {
             steps('Hello World'){
                 echo 'Hello, world'
             }
