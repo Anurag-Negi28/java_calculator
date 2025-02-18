@@ -29,6 +29,7 @@ pipeline{
             steps{
                 bat '''
                 mkdir "java_program"
+                copy "calci.java" "java_prog\\"
                 cd "java_program"
                 '''
             }
