@@ -57,17 +57,17 @@ pipeline{
                 bat """
                 cd "java_program"
                 javac calci.java
-                java calci2 ${TASK} ${FIRST_NUMBER} ${SECOND_NUMBER}
+                javac calci2.java
                 """
             }
         }
         stage('run java program'){
             steps{
-                bat '''
+                bat """
                 cd "java_program"
                 java calci
-                java calci2
-                '''
+                java calci2 ${TASK} ${FIRST_NUMBER} ${SECOND_NUMBER}
+                """
             }
         }
     }
