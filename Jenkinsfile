@@ -54,11 +54,11 @@ pipeline{
         }
         stage('compile java program'){
             steps{
-                bat '''
+                bat """
                 cd "java_program"
                 javac calci.java
                 java calci2 ${TASK} ${FIRST_NUMBER} ${SECOND_NUMBER}
-                '''
+                """
             }
         }
         stage('run java program'){
