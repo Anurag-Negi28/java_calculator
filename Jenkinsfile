@@ -25,10 +25,11 @@ pipeline{
                 }
             }
         }
-        stage("change_directory"){
+        stage("make and change_directory"){
             steps{
                 bat '''
-                cd E:\\devops_&_cloud\\sem6\\ci_cd_lab\\java_calci\\java_prog\\calci.java
+                mkdir 'java_program'
+                cd 'java_program/java_calci'
                 '''
             }
         }
