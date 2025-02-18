@@ -2,6 +2,7 @@ pipeline{
     agent any
     tools{
         maven 'M398'
+        jdk 'JDK-21'
     }
     stages{
         stage('Hello_world') {
@@ -18,10 +19,20 @@ pipeline{
             steps{
                 script{
                     def userInput = input message: 'Enter something', parameters:[
-                        string(name: 'USER_NAME', defaultValue: '', description:'Enter your message')
+                        string(name: 'USER_NAME', defaultValue: '', description:'Enter message')
                     ]
                     echo "Input entered: ${userInput}"
                 }
+            }
+        }
+        stage('compile java program'){
+            steps{
+                bat 'javac calci.java'
+            }
+        }
+        stage('run java program'){
+            steps{
+                bat 'java calci'
             }
         }
     }
