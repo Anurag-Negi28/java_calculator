@@ -20,6 +20,14 @@ pipeline{
                 bat 'cd'
             }
         }
+        stage("make and delete_directory"){
+            steps{
+                bat '''
+                if not exist "new_dir" mkdir "new_dir"
+                rmdir "new_dir"
+                '''
+            }
+        }
         stage('take_input'){
             steps{
                 script{
